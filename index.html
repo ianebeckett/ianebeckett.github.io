@@ -3,7 +3,8 @@ a tale of electricity, recklesness, and redemption
 
 TL;DR:
 - WSL2 stores its files in a virtual hard drive (VHD) named ext4.vhdx.
-- I found the VHD in foo
+- I found the VHD in D:\Users\<my username>\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState
+    --AppData is a hidden file
 - copy the VHD to a Windows machine
     --check the file format and capacity of any intermediate drives used for this transfer. My wsl VHD was about 50 GB. I used an HDD with 4 TB of space in NTFS format.
 - install WSL2 on the Windows machine
@@ -50,7 +51,7 @@ I borrowed an old Dell from a family member who lived nearby.
 I plugged in my drive and started clicking though the files with file explorer.
 I Googled. I searched the files. I RTFManpages, but I still couldn't find the files.
 Even ChatGPT didn't have an answer. Well, it had an answer, but it was basically irrelavent to my problem. Despite several attempts to twist my words into a more effective prompt, it kept giving answers that were truthy, but ultimately useless.
-(This StackExchange post)[https://superuser.com/questions/1185033/what-is-the-home-directory-on-windows-subsystem-for-linux] led me closest to the right solution. Armed with the information therein, I managed to find a virtual drive called ext4.vhdl in foo.
+(This StackExchange post)[https://superuser.com/questions/1185033/what-is-the-home-directory-on-windows-subsystem-for-linux] led me closest to the right solution. Armed with the information therein, I managed to find a virtual drive called ext4.vhdl in D:\Users\<my username>\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState.
 Still, how was I to get the actual files? Again, StackExchange to the rescue! After reading a few more pages, as well as the WSL man pages, I learned that I could mount ext4.vhdl to a WSL distro using powershell $wsl -d Ubuntu-22.04 --mount --vhd <path to the VHD>
 After some supplemental reading to make sure I wouldn't break things even more, I was able to load WSL and find the drive in /mnt/wsl. I carefully transferred all of my files over to a new device and retired for the day.
 
