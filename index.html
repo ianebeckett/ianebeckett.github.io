@@ -1,5 +1,4 @@
 Where does WSL store my files?
-a tale of electricity, recklesness, and redemption
 
 TL;DR:
 - WSL2 stores its files in a virtual hard drive (VHD) named ext4.vhdx.
@@ -8,7 +7,6 @@ TL;DR:
 - copy the VHD to a Windows machine
     --check the file format and capacity of any intermediate drives used for this transfer. My wsl VHD was about 50 GB. I used an HDD with 4 TB of space in NTFS format.
 - install WSL2 on the Windows machine
-    --I used Windows 11
 - mount the VHD in powershell: $ wsl -d Ubuntu-22.04 --mount --vhd <path to the VHD>
     --I'm not 100% sure about the importance of the distro name, but this worked for me. See the wsl man pages for more info.
 - on the Windows machine, run Ubuntu
@@ -60,7 +58,5 @@ Lessons Learned:
 -If you're on Windows, your device storage is probably encrypted by BitLocker. Keep track of your bitlocker key. It can probably be found at your microsoft.com account.
 -Backup your data. It's said that the effectiveness of a data backup plan is unknown until one attempts to actually recover backed up data
 
-Silver Linings:
--I learned a lot about both WSL and storage.
--Over the past year, I had been using WSL more and more for its convenience compared to Powershell. Now seemed like a good time to make the switch to using Linux as my desktop OS. I'm now using Ubuntu full-time and much prefer it to Windows + WSL.
+Over the past year, I had been using WSL more and more for its convenience compared to Powershell. Now seemed like a good time to make the switch to using Linux as my desktop OS. I'm now using Ubuntu full-time and much prefer it to Windows + WSL.
 
